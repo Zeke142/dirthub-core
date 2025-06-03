@@ -1,0 +1,10 @@
+'use client'
+
+export default function ExamplePlugin() {
+  return (
+    <div className="p-4 bg-white rounded shadow-md">
+      <h2 className="text-lg font-semibold mb-2">📦 Example Plugin</h2>
+      <p>This is the Example Plugin! You can now build modular features like this into DirtHub.</p>
+    </div>
+  )
+}
