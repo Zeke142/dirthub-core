@@ -5,8 +5,8 @@ import { useParams } from 'next/navigation'
 
 const pluginMap: Record<string, any> = {
   example: dynamic(() => import('../../../plugins/example/index'), { ssr: false }),
-  map: dynamic(() => import('../../../plugins/map/index'), { ssr: false }),
-  profile: dynamic(() => import('../../../plugins/profile/index'), { ssr: false }),
+  //map: dynamic(() => import('../../../plugins/map/index'), { ssr: false }),
+  //profile: dynamic(() => import('../../../plugins/profile/index'), { ssr: false }),
 }
 
 export default function PluginPage() {
