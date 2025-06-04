@@ -5,8 +5,19 @@ import { ShoppingCart, PackageCheck, Truck } from 'lucide-react';
 export default function HomePage() {
   const [darkMode, setDarkMode] = useState(false);
 
+  // Load preference on mount
+  useEffect(() => {
+    const saved = localStorage.getItem('dirthub-dark-mode');
+    if (saved === 'true') {
+      setDarkMode(true);
+      document.documentElement.classList.add('dark');
+    }
+  }, []);
+
+  // Update html class and save on toggle
   useEffect(() => {
     document.documentElement.classList.toggle('dark', darkMode);
+    localStorage.setItem('dirthub-dark-mode', String(darkMode));
   }, [darkMode]);
 
   return (
