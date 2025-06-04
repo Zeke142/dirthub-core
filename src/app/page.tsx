@@ -7,7 +7,7 @@ export default function HomePage() {
           Turning waste into opportunity.
         </p>
         <p style={{ fontSize: '1rem', marginTop: '1rem' }}>
-          We connect dirt buyers, sellers, and haulers—streamlining your job, reducing waste, and saving money.
+          We connect dirt buyers, sellers, and transporters—streamlining your job, reducing waste, and saving money.
         </p>
         <div style={{ marginTop: '2rem' }}>
           <button style={{ marginRight: '1rem', padding: '0.75rem 1.25rem', fontSize: '1rem' }}>
@@ -19,18 +19,18 @@ export default function HomePage() {
         </div>
       </header>
 
-      <section style={{ display: 'flex', justifyContent: 'space-between', gap: '1rem', marginBottom: '3rem' }}>
-        <div style={{ flex: 1, backgroundColor: '#f3f3f3', padding: '1rem', borderRadius: '8px' }}>
-          <h3>🛠 For Contractors</h3>
-          <p>Find clean fill or offload excess dirt fast. No more waiting on callbacks or manual coordination.</p>
+      <section style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginBottom: '3rem' }}>
+        <div style={{ backgroundColor: '#f3f3f3', padding: '1rem', borderRadius: '8px' }}>
+          <h3>🛒 Buyers</h3>
+          <p>Find clean fill or topsoil fast, without waiting on callbacks or manual coordination.</p>
         </div>
-        <div style={{ flex: 1, backgroundColor: '#f3f3f3', padding: '1rem', borderRadius: '8px' }}>
-          <h3>🌱 For Landscapers</h3>
-          <p>Source local topsoil or gravel while staying within budget and project timelines.</p>
+        <div style={{ backgroundColor: '#f3f3f3', padding: '1rem', borderRadius: '8px' }}>
+          <h3>🏗 Sellers</h3>
+          <p>Offload excess dirt with ease, and get matched with local jobs needing material.</p>
         </div>
-        <div style={{ flex: 1, backgroundColor: '#f3f3f3', padding: '1rem', borderRadius: '8px' }}>
-          <h3>🚚 For Haulers</h3>
-          <p>Fill your route with verified delivery jobs and reduce empty miles.</p>
+        <div style={{ backgroundColor: '#f3f3f3', padding: '1rem', borderRadius: '8px' }}>
+          <h3>🚚 Transport</h3>
+          <p>Fill your route with verified delivery jobs and reduce empty hauls.</p>
         </div>
       </section>
 
