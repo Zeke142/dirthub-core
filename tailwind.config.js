@@ -5,8 +5,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        dirtbrown: '#7a5c39',
-      },
+        dirtbrown: '#7a5c39'
+      }
     },
   },
   plugins: [],
