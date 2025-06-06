@@ -1,4 +1,5 @@
-import './globals.css'
+import './globals.css' // ✅ REQUIRED for Tailwind to work
+
 export const metadata = {
   title: 'DirtHub',
 }
