@@ -1,0 +1,8 @@
+{
+  "build": {
+    "env": {
+      "CLEAR_CACHE": "true"
+    }
+  },
+  "ignoreCommand": "rm -rf .next/cache"
+}
