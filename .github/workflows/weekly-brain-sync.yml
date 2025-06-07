@@ -1,0 +1,29 @@
+name: 🧠 Weekly DirtHub Brain Sync
+
+on:
+  schedule:
+    - cron: '0 6 * * 0'  # Every Sunday at 6:00 AM UTC
+  workflow_dispatch:     # Manual run option from GitHub UI
+
+jobs:
+  brain-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v3
+
+      - name: 🟢 Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: 🔁 Run sync_updates_to_brain.js
+        run: node scripts/sync_updates_to_brain.js
+
+      - name: 📤 Commit updated Brain files
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add dirtbrain/
+          git commit -m "🧠 Weekly DirtHub Brain update – $(date +'%Y-%m-%d')" || echo "No changes to commit"
+          git push
