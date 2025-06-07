@@ -1,19 +1,30 @@
+// scripts/sync_updates_to_brain.js
+
 const fs = require("fs");
 const path = "./dirtbrain";
 const today = new Date().toISOString().slice(0, 10);
 
-// Example auto-updates
+// ✅ Forced update to ensure test result appears
 const updates = [
-  { file: "tech-rules.md", summary: "- Tailwind v4 must not use `@tailwindcss/postcss`. Use `tailwindcss` directly." },
-  { file: "sprint-system.md", summary: "- Daily standups now include bot sync + user priority review." }
+  {
+    file: "logbook-index.md",
+    summary: `- ✅ Forced test update from GitHub Action at ${new Date().toISOString()}`
+  },
+  {
+    file: "tech-rules.md",
+    summary: `- 🧪 Confirmed GitHub Action writes to .md files – ${today}`
+  }
 ];
 
+// 🔁 Append updates to each target file
 updates.forEach(update => {
   const filePath = `${path}/${update.file}`;
+
   if (fs.existsSync(filePath)) {
-    fs.appendFileSync(filePath, `\n\n---\n### 🧠 Auto Update – ${today}\n${update.summary}`);
+    const newEntry = `\n\n---\n### 🧠 Auto Update – ${today}\n${update.summary}`;
+    fs.appendFileSync(filePath, newEntry);
     console.log(`✅ Updated: ${update.file}`);
   } else {
-    console.warn(`⚠️ Missing file: ${update.file}`);
+    console.warn(`⚠️ File not found: ${update.file}`);
   }
 });
