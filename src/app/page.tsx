@@ -1,28 +1,27 @@
-export default function HomePage() {
-  return (
-    <main className="min-h-screen bg-white text-black">
-      <div className="p-8">
-        <h1 className="text-4xl font-bold mb-4">DirtHub</h1>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div className="p-6 border rounded shadow">
-            <h2 className="text-xl font-semibold mb-2">Buyers</h2>
-            <p>Find clean fill and screened dirt fast, with no callbacks.</p>
-          </div>
-          <div className="p-6 border rounded shadow">
-            <h2 className="text-xl font-semibold mb-2">Sellers</h2>
-            <p>List your excess soil and get matched to real jobs.</p>
-          </div>
-          <div className="p-6 border rounded shadow">
-            <h2 className="text-xl font-semibold mb-2">Transport</h2>
-            <p>Offer hauling services and reduce empty runs.</p>
-          </div>
-        </div>
+'use client';
+import { useEffect, useState } from 'react';
 
-        {/* ✅ Tailwind render test */}
-        <div className="bg-green-500 text-white p-4 mt-8 rounded">
-          ✅ Tailwind is working if this box is green
-        </div>
-      </div>
+export default function HomePage() {
+  const [ping, setPing] = useState<string>('Loading...');
+
+  useEffect(() => {
+    const fetchPing = async () => {
+      try {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/ping`);
+        const data = await res.json();
+        setPing(data.message);
+      } catch (error) {
+        setPing('Failed to fetch 😢');
+      }
+    };
+
+    fetchPing();
+  }, []);
+
+  return (
+    <main className="p-8 text-xl">
+      <h1 className="text-3xl font-bold">DirtHub Core 🚜</h1>
+      <p>Backend Ping: <strong>{ping}</strong></p>
     </main>
   );
 }
