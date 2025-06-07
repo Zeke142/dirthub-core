@@ -1,27 +1,25 @@
-'use client';
-import { useEffect, useState } from 'react';
+import PluginPanel from "@/components/PluginPanel";
 
 export default function HomePage() {
-  const [ping, setPing] = useState<string>('Loading...');
-
-  useEffect(() => {
-    const fetchPing = async () => {
-      try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/ping`);
-        const data = await res.json();
-        setPing(data.message);
-      } catch (error) {
-        setPing('Failed to fetch 😢');
-      }
-    };
-
-    fetchPing();
-  }, []);
-
   return (
-    <main className="p-8 text-xl">
-      <h1 className="text-3xl font-bold">DirtHub Core 🚜</h1>
-      <p>Backend Ping: <strong>{ping}</strong></p>
+    <main className="min-h-screen bg-white text-gray-900 p-6 md:p-12 space-y-8">
+      <section className="max-w-3xl mx-auto text-center">
+        <h1 className="text-4xl font-bold tracking-tight">
+          Welcome to <span className="text-green-600">DirtHub Core</span>
+        </h1>
+        <p className="mt-4 text-lg text-gray-700">
+          Connecting buyers, sellers, and transporters in construction and landscaping.  
+          DirtHub turns excavation waste into reusable opportunity — fast, simple, and sustainable.
+        </p>
+      </section>
+
+      <section className="max-w-3xl mx-auto">
+        <PluginPanel />
+      </section>
+
+      <footer className="mt-12 text-center text-sm text-gray-400">
+        <p>DirtHub™ — Built for the people who move the earth.</p>
+      </footer>
     </main>
   );
 }
