@@ -1,5 +1,3 @@
-// scripts/sync_updates_to_brain.js
-
 const fs = require("fs");
 const path = "./dirtbrain";
 const today = new Date().toISOString().slice(0, 10);
