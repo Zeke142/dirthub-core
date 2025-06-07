@@ -1,12 +1,6 @@
 export default {
   darkMode: 'class',
-  content: [
-    './src/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-  ],
-  theme: {
-    extend: {},
-  },
+  content: ['./app/**/*.{ts,tsx}', './components/**/*.{ts,tsx}'],
+  theme: { extend: {} },
   plugins: [],
 };
